@@ -1,13 +1,6 @@
-FROM busybox:1.35
+FROM joseluisq/static-web-server:2-alpine
 
-# Create a non-root user to own the files and run our server
-RUN adduser -D static
-USER static
-WORKDIR /home/static
+COPY src /public
+COPY config.toml config.toml
 
-# Copy the static website
-# Use the .dockerignore file to control what ends up inside the image!
-COPY src .
-
-# Run BusyBox httpd
-CMD ["busybox", "httpd", "-f", "-v", "-p", "3000"]
+CMD ["static-web-server"]
