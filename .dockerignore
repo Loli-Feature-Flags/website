@@ -9,3 +9,5 @@
 # Editor-based HTTP Client requests
 .idea/httpRequests
 fly.toml
+
+node_modules
