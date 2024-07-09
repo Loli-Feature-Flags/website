@@ -4,6 +4,9 @@ import { viteBundler } from '@vuepress/bundler-vite'
 import { searchProPlugin } from "vuepress-plugin-search-pro";
 import {seoPlugin} from "@vuepress/plugin-seo";
 import {sitemapPlugin} from "@vuepress/plugin-sitemap";
+import {SIDEBAR_CONFIG} from "./configs/sidebar";
+import {NAVBAR_CONFIG} from "./configs/navbar";
+import {HEAD_CONFIG} from "./configs/head";
 
 const BASE_URL = "https://www.lolifeatureflags.com"
 
@@ -15,35 +18,20 @@ export default defineUserConfig({
 
   public: "public",
 
-  head: [
-      ['link', { rel: 'icon', href: '/favicon.png' }]
-  ],
+  head: HEAD_CONFIG,
 
   theme: defaultTheme({
     logo: '/logo.png',
     logoDark: "/logo-dark.png",
-    navbar: [
-      '/',
-      '/get-started/',
-      '/concept/',
-      {
-        text: "Libraries",
-        children: [
-            '/sdk/',
-            '/ui/'
-        ]
-      },
-      {
-        text: "Discord",
-        link: "https://discord.gg/njRQHRNu"
-      }
-    ],
     colorMode: "auto",
 
     repo: "https://github.com/Loli-Feature-Flags",
     docsRepo: "https://github.com/Loli-Feature-Flags/website",
     docsBranch: "main",
-    docsDir: "docs"
+    docsDir: "docs",
+
+    navbar: NAVBAR_CONFIG,
+    sidebar: SIDEBAR_CONFIG
   }),
 
   bundler: viteBundler(),
@@ -60,7 +48,8 @@ export default defineUserConfig({
         url: "https://peter-kuhmann.de",
         email: "info@peter-kuhmann.de",
       },
-      fallBackImage: `${BASE_URL}/fallback-og-image.jpg`
+      fallBackImage: `${BASE_URL}/fallback-og-image.jpg`,
+      autoDescription: true,
     }),
     sitemapPlugin({
       hostname: BASE_URL,
