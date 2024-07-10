@@ -17,7 +17,8 @@ export const SIDEBAR_CONFIG : SidebarOptions = [
                 text: "JS/TS SDK",
                 link: "/reference/sdk/",
                 children: [
-                    "/reference/sdk/installation.md"
+                    "/reference/sdk/installation.md",
+                    "/reference/sdk/client.md"
                 ]
             },
             {
