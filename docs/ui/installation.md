@@ -38,13 +38,13 @@ bun add @loli-feature-flags/loli-ui
 
 ## CDN
 
-### ESM module
+### ESM
 
 ```html:no-line-numbers
 <script type="module" src="https://cdn.jsdelivr.net/gh/loli-feature-flags/loli-ui@latest/dist/loli-ui.js"></script>
 ```
 
-### UMD build
+### UMD
 
 ```html:no-line-numbers
 <script src="https://cdn.jsdelivr.net/gh/loli-feature-flags/loli-ui@latest/dist/loli-ui.umd.cjs"></script>

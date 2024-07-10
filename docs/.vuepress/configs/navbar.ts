@@ -3,33 +3,43 @@ import {NavbarOptions} from "@vuepress/theme-default";
 export const NAVBAR_CONFIG : NavbarOptions = [
     '/',
     {
-        text: "Guide",
-        link: "/guide/",
+        text: "Guides",
         children: [
-            "/guide/introduction.md",
-            "/guide/getting-started.md"
+            "/introduction.md",
+            {
+                text: "Concept",
+                link: "/concept/"
+            },
+            "/terminology.md",
+            "/best-practices.md",
         ]
     },
     {
         text: "Reference",
         children: [
             {
-                text: "JS/TS SDK",
-                link: "/reference/sdk/",
+                text: "SDK",
                 children: [
                     {
                         text: "Installation",
-                        link: "/reference/sdk/installation.md"
+                        link: "/sdk/installation.md"
+                    },
+                    {
+                        text: "Client",
+                        link: "/sdk/client/"
+                    },
+                    {
+                        text: "Recommendations",
+                        link: "/sdk/recommendations/"
                     }
                 ]
             },
             {
                 text: "Management UI",
-                link: "/reference/ui/",
                 children: [
                     {
                         text: "Installation",
-                        link: "/reference/ui/installation.md"
+                        link: "/ui/installation.md"
                     }
                 ]
             }

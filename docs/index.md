@@ -4,12 +4,11 @@ title: Home
 description: Build your own feature flag infrastructure for your JavaScript/TypeScript stack. 
 heroImage: /hero.png
 actions:
-  - text: Get Started
-    link: /guide/getting-started
-    type: primary
-
   - text: Introduction
-    link: /guide/introduction
+    link: /introduction
+    type: primary
+  - text: Concept
+    link: /concept/
     type: secondary
 
 features:
