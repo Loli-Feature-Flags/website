@@ -31,7 +31,11 @@ export default defineUserConfig({
     docsDir: "docs",
 
     navbar: NAVBAR_CONFIG,
-    sidebar: SIDEBAR_CONFIG
+    sidebar: SIDEBAR_CONFIG,
+
+    lastUpdated: true,
+    lastUpdatedText: "Last update",
+    contributors: false,
   }),
 
   bundler: viteBundler(),

@@ -5,6 +5,7 @@ export const SIDEBAR_CONFIG : SidebarOptions = [
     {
         text: "Concept",
         link: "/concept/",
+        collapsible: true,
         children: [
             "/concept/principles.md",
             "/concept/evaluation-context.md",
@@ -27,6 +28,7 @@ export const SIDEBAR_CONFIG : SidebarOptions = [
     {
         text: "SDK",
         link: "/sdk/",
+        collapsible: true,
         children: [
             "/sdk/installation.md",
             {
@@ -53,6 +55,7 @@ export const SIDEBAR_CONFIG : SidebarOptions = [
     },
     {
         text: "Management UI",
+        collapsible: true,
         link: "/ui/",
         children: [
             "/ui/installation.md"
