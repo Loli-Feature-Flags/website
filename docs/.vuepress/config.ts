@@ -25,7 +25,6 @@ export default defineUserConfig({
     logoDark: "/logo-dark.png",
     colorMode: "auto",
 
-    repo: "https://github.com/Loli-Feature-Flags",
     docsRepo: "https://github.com/Loli-Feature-Flags/website",
     docsBranch: "main",
     docsDir: "docs",

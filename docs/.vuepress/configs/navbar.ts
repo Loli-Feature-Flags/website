@@ -48,5 +48,17 @@ export const NAVBAR_CONFIG : NavbarOptions = [
     {
         text: "Discord",
         link: "https://discord.gg/njRQHRNu"
+    },
+    {
+        text: "GitHub",
+        link: "https://github.com/Loli-Feature-Flags",
+    },
+    {
+        text: "Legal",
+        children: [
+            "/legal/license.md",
+            "/legal/imprint.md",
+            "/legal/data-privacy.md"
+        ]
     }
 ]
