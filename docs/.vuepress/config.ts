@@ -40,10 +40,10 @@ export default defineUserConfig({
   bundler: viteBundler(),
 
   plugins: [
-    searchProPlugin({
-      indexContent: true,
-      autoSuggestions: false,
-    }),
+    // searchProPlugin({
+    //   indexContent: true,
+    //   autoSuggestions: false,
+    // }),
     seoPlugin({
       hostname: BASE_URL,
       author: {
