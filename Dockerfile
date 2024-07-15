@@ -1,12 +1,15 @@
 FROM node:22-alpine3.19 as build
+RUN apk add git
 WORKDIR /app
 COPY package.json package.json
 COPY package-lock.json package-lock.json
 RUN npm install
-COPY .git .git
+COPY .git/ ./.git/
 COPY public public
 COPY docs docs
-RUN NODE_ENV=production npm run docs:build
+ARG NODE_ENV=production
+ENV NODE_ENV=production
+RUN npm run docs:build
 
 FROM joseluisq/static-web-server:2-alpine
 
