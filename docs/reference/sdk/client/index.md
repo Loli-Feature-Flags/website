@@ -14,9 +14,9 @@ validation, and evaluation functions the SDK offers.
 
 ## Further Reads
 
-- [Initialization](./initialization.md)
-- [Spec Loader](./spec-loader.md)
-- [Options](./options.md)
-- [Callbacks](./callbacks.md)
-- [Evaluation](./evaluation.md)
+- [Initialization](./initialization)
+- [Spec Loader](./spec-loader)
+- [Options](./options)
+- [Callbacks](./callbacks)
+- [Evaluation](./evaluation)
 

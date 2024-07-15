@@ -5,6 +5,6 @@ We want to provide some recommendations.
 
 ## Further Reads
 
-- [Monoliths](./monoliths.md)
-- [Distributed Systems](./distributed-systems.md)
-- [Client-Side Evaluation](./client-side-evaluation.md)
+- [Monoliths](./monoliths)
+- [Distributed Systems](./distributed-systems)
+- [Client-Side Evaluation](./client-side-evaluation)

@@ -1,19 +1,18 @@
-FROM node:22-alpine3.19 as build
+FROM oven/bun:alpine as build
 RUN apk add git
 WORKDIR /app
 COPY package.json package.json
-COPY package-lock.json package-lock.json
-RUN npm install
+COPY bun.lockb bun.lockb
+RUN bun install
 COPY .git/ ./.git/
-COPY public public
 COPY docs docs
 ARG NODE_ENV=production
 ENV NODE_ENV=production
-RUN npm run docs:build
+RUN bun run build
 
 FROM joseluisq/static-web-server:2-alpine
 
-COPY --from=build /app/docs/.vuepress/dist /public
+COPY --from=build /app/docs/.vitepress/dist /public
 COPY config.toml config.toml
 
 CMD ["static-web-server"]

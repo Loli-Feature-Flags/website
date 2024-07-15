@@ -5,4 +5,4 @@ to provider a visual editor to create/modify a Loli specification.
 
 ## Further Reads
 
-- [Installation](./installation.md)
+- [Installation](./installation)

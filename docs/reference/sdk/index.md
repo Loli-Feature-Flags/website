@@ -5,12 +5,12 @@ The Loli Feature Flag JavaScript/TypeScript SDK is the core piece of Loli Featur
 - exposes validation functionality,
 - exposes low-level functions to work with specifications,
 - exposes low-level functions to evaluate feature flags, and segments,
-- and exposes a higher-level [client](./client/) interface to conveniently load a specification and evaluate feature flags.
+- and exposes a higher-level [client](./client/index) interface to conveniently load a specification and evaluate feature flags.
 
 ## Further Reads
 
-- [Installation](./installation.md)
-- [Client](./client/)
+- [Installation](./installation)
+- [Client](./client/index)
 - [Recommendations](./recommendations/)
 
 ## Resources

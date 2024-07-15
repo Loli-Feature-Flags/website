@@ -2,50 +2,36 @@
 
 ## Package
 
-<CodeGroup>
-  <CodeGroupItem title="npm">
+::: code-group
 
-```bash:no-line-numbers
+```bash [npm]
 npm add @loli-feature-flags/loli-ui
 ```
 
-  </CodeGroupItem>
-
-  <CodeGroupItem title="yarn">
-
-```bash:no-line-numbers
+```bash [yarn]
 yarn add @loli-feature-flags/loli-ui
 ```
 
-  </CodeGroupItem>
-
-  <CodeGroupItem title="pnpm">
-
-```bash:no-line-numbers
+```bash [pnpm]
 pnpm add @loli-feature-flags/loli-ui
 ```
 
-  </CodeGroupItem>
-
-  <CodeGroupItem title="bun">
-
-```bash:no-line-numbers
+```bash [bun]
 bun add @loli-feature-flags/loli-ui
 ```
 
-  </CodeGroupItem>
-</CodeGroup>
+:::
 
 ## CDN
 
 ### ESM
 
-```html:no-line-numbers
+```html
 <script type="module" src="https://cdn.jsdelivr.net/gh/loli-feature-flags/loli-ui@latest/dist/loli-ui.js"></script>
 ```
 
 ### UMD
 
-```html:no-line-numbers
+```html
 <script src="https://cdn.jsdelivr.net/gh/loli-feature-flags/loli-ui@latest/dist/loli-ui.umd.cjs"></script>
 ```
