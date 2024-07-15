@@ -11,7 +11,7 @@ the [Emergency mode](#emergency-mode).
 When calling one of the "single feature flag" evaluation functions, the client
 ensures to return a value with the correct data type.
 
-### `evaluateBooleanFeatureFlag`
+### Boolean
 
 To evaluate a feature flag that is defined as a `boolean` feature flag
 in the Loli specification, use `evaluateBooleanFeatureFlag`.
@@ -28,7 +28,7 @@ const booleanValue = await client.evaluateBooleanFeatureFlag(
 );
 ```
 
-### `evaluateNumberFeatureFlag`
+### Number
 
 To evaluate a feature flag that is defined as a `number` feature flag
 in the Loli specification, use `evaluateNumberFeatureFlag`.
@@ -45,7 +45,7 @@ const numberValue = await client.evaluateNumberFeatureFlag(
 );
 ```
 
-### `evaluateStringFeatureFlag`
+### String
 
 To evaluate a feature flag that is defined as a `string` feature flag
 in the Loli specification, use `evaluateStringFeatureFlag`.

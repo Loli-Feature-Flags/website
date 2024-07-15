@@ -3,9 +3,10 @@ WORKDIR /app
 COPY package.json package.json
 COPY package-lock.json package-lock.json
 RUN npm install
+COPY .git .git
 COPY public public
 COPY docs docs
-RUN npm run docs:build
+RUN NODE_ENV=production npm run docs:build
 
 FROM joseluisq/static-web-server:2-alpine
 

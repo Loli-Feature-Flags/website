@@ -1,6 +1,6 @@
 # Callbacks
 
-## `specLoaderFailure`
+## specLoaderFailure
 
 - Optional
 - Parameters:
@@ -12,7 +12,7 @@
 This callback is executed when the spec loader throws an error/returns
 with a rejected promise.
 
-## `specValidationFailure`
+## specValidationFailure
 
 - Optional
 - Parameters:
@@ -27,7 +27,7 @@ This callback is executed after the spec loader successfully returned
 something, but the result is invalid JSON or a Loli specification with
 an invalid schema or with semantic issues.
 
-## `specLoadedAndValidated`
+## specLoadedAndValidated
 
 - Optional
 - Parameters:
@@ -40,7 +40,7 @@ and the result was a valid Loli specification.
 The callback can be used to e.g. put the loaded and validated Loli specification
 in a distributed cache.
 
-## `emergencyFallbackUsed`
+## emergencyFallbackUsed
 
 - Optional
 - Parameters:
@@ -53,7 +53,7 @@ This callback is executed whenever the client acts in emergency mode
 and has to make use of an emergency fallback (see options
 "emergencyFallbacksByFeatureFlagName" and "emergencyFallbacksByDataType").
 
-## `evaluationWarning`
+## evaluationWarning
 
 - Optional
 - Type: `EvaluationWarningLogger`

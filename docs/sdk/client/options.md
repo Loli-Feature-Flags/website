@@ -1,6 +1,6 @@
 # Options
 
-## `specLoaderTimeoutMilliseconds`
+## specLoaderTimeoutMilliseconds
 
 - Optional
 - Type: `number`
@@ -12,7 +12,7 @@ the spec loader, the client assumes the call to have failed with
 a timeout. Depending on the configuration of the client, it
 might perform a retry.
 
-## `specLoaderMaxRetries`
+## specLoaderMaxRetries
 
 - Optional
 - Type: `number`
@@ -22,7 +22,7 @@ If this option is > 0, the client performs retries if the
 (initial) spec loader call fails or times out.
 The max. number of spec loader calls is 1 + specLoaderMaxRetries.
 
-## `specLoaderFailureRetryDelayMilliseconds`
+## specLoaderFailureRetryDelayMilliseconds
 
 - Optional
 - Type: `number`
@@ -31,7 +31,7 @@ The max. number of spec loader calls is 1 + specLoaderMaxRetries.
 The time to wait between the last spec loader call attempt
 and the next one (a retry) in milliseconds.
 
-## `specCacheStaleTimeMilliseconds`
+## specCacheStaleTimeMilliseconds
 
 - Optional
 - Type: `number`
@@ -46,7 +46,7 @@ is triggered by the client. When the cached spec is becomes/is seen
 as stale, the client will automatically trigger a spec reload
 on spec reads (e.g. evaluation calls).
 
-## `specReloadMaxBlockingWaitMilliseconds`
+## specReloadMaxBlockingWaitMilliseconds
 
 - Optional
 - Type: `number`
@@ -65,7 +65,7 @@ the newly fetched spec, otherwise they will continue to use the stale spec.
 
 The reload is not affected by that in any way and will finish either way.
 
-## `disableInitialSpecLoadOnCreation`
+## disableInitialSpecLoadOnCreation
 
 - Optional
 - Type: `boolean`
@@ -76,7 +76,7 @@ initialization. If you don't want this and instead want the client
 to first load the spec on the first evaluation call, you can set
 this option to true.
 
-## `emergencyFallbacksByFeatureFlagName`
+## emergencyFallbacksByFeatureFlagName
 
 - Optional
 - Type: `LoliClientAllFeatureFlagsEvaluationResult`
@@ -90,7 +90,7 @@ fallback values by feature flag name.
 This is relevant for an "all feature flags" evaluation and single/per-data-type
 evaluation calls.
 
-## emergencyFallbacksByDataType``
+## emergencyFallbacksByDataType
 
 - Optional
 - Type: `LoliClientEvaluationEmergencyFallbacks`
@@ -107,7 +107,7 @@ on the expected output data type.
 
 This option is not relevant for an "all feature flags" evaluation.
 
-## `dataTypeMismatchBehavior`
+## dataTypeMismatchBehavior
 
 - Optional
 - Type: `string`
@@ -127,7 +127,7 @@ value by data type based on the evaluation function signature
 The value "error" causes the client to instead throw an error. The evaluation
 function will also return an error respectively return a rejected promise.
 
-## `callbackBehavior`
+## callbackBehavior
 
 - Optional
 - Type: `string`
