@@ -65,6 +65,7 @@ export const SIDEBAR_CONFIG : DefaultTheme.Sidebar = {
                         { text: "Options", link: "/reference/sdk/client/options" },
                         { text: "Callbacks", link: "/reference/sdk/client/callbacks" },
                         { text: "Evaluation", link: "/reference/sdk/client/evaluation" },
+                        { text: "Other Functions", link: "/reference/sdk/client/other-functions" },
                     ]
                 },
                 {
@@ -72,8 +73,8 @@ export const SIDEBAR_CONFIG : DefaultTheme.Sidebar = {
                     collapsed: false,
                     link: "/reference/sdk/recommendations",
                     items: [
-                        { text: "Monoliths", link: "/reference/sdk/recommendations/monoliths" },
-                        { text: "Distributed Systems", link: "/reference/sdk/recommendations/distributed-systems" },
+                        { text: "Single Instance Services", link: "/reference/sdk/recommendations/single-instance-services" },
+                        { text: "Multi Instance Services", link: "/reference/sdk/recommendations/multi-instance-services" },
                         { text: "Client-Side Evaluation", link: "/reference/sdk/recommendations/client-side-evaluation" },
                     ]
                 },

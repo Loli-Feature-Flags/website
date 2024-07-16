@@ -19,4 +19,5 @@ validation, and evaluation functions the SDK offers.
 - [Options](./options)
 - [Callbacks](./callbacks)
 - [Evaluation](./evaluation)
+- [Other Functions](./other-functions)
 
