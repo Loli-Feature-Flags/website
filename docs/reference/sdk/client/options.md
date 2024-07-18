@@ -46,6 +46,14 @@ is triggered by the client. When the cached spec is becomes/is seen
 as stale, the client will automatically trigger a spec reload
 on spec reads (e.g. evaluation calls).
 
+::: warning
+
+You can theoretically disable automatic reloads by using `specCacheStaleTimeMilliseconds: Infinity`.
+This is not recommended in most cases. But it can be of interest for multi instance services.
+Read more about that topic here: [Multi Instance Services](../recommendations/multi-instance-services#consistent-evaluations)
+
+::: 
+
 ## specReloadMaxBlockingWaitMilliseconds
 
 - Optional

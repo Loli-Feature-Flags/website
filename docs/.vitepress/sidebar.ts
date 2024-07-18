@@ -46,6 +46,10 @@ export const SIDEBAR_CONFIG : DefaultTheme.Sidebar = {
                     ]
                 },
             ]
+        },
+        {
+            text: "Reference",
+            link: "/reference/sdk"
         }
     ],
     '/reference': [

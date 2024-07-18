@@ -12,6 +12,19 @@
 This callback is executed when the spec loader throws an error/returns
 with a rejected promise.
 
+## specLoaderProcessorCallbackFailure
+
+- Optional
+- Parameters:
+  - `message: string`
+    - Failure message.
+  - `cause?: unknown`
+    - Optional cause.
+
+This callback is executed when the spec loader processor
+executes (if specified) one of its callbacks and detects that they
+throw an error.
+
 ## specValidationFailure
 
 - Optional

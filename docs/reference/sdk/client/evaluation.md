@@ -126,3 +126,24 @@ The client returns emergency fallback values in the following cases:
 - The spec loader did not return a valid Loli specification.
 - The client could not find a feature flag definition in the loaded specification for a given feature flag name (single feature flag evaluation).
 - The data type of a feature flag defined in the specification various from the evaluation function signature (single feature flag evaluation).
+
+## Segment Caching
+
+The Loli specification supports segment specification which act as reusable sets of conditions. By nature, segments
+are ideally used by multiple feature flags or event other segments. This prevents defining the same conditions
+in e.g. multiple feature flags over and over again.
+
+To not evaluate one segment multiple times during a single feature flag or all feature flags evaluation operation,
+a `LoliClient` uses a segment evaluation cache.
+
+Whenever a segment is evaluated during an evaluation call it will not be reevaluated again during the same
+evaluation call. Instead, the cached evaluation is then used.
+
+This works, because all internal evaluations are deterministic. Same evaluation context. Same evaluation output.
+
+::: tip
+
+Make use of segments as much as possible to speed up the feature flag evaluation
+for very large feature flag specifications.
+
+:::

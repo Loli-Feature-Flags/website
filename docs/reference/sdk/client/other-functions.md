@@ -1,6 +1,6 @@
 # Other Functions
 
-## waitForFirstLoadToFinish
+## waitForFirstSpecLoadToFinish
 
 - Returns: `Promise<void>`
 
