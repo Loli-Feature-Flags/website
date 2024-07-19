@@ -50,7 +50,7 @@ on spec reads (e.g. evaluation calls).
 
 You can theoretically disable automatic reloads by using `specCacheStaleTimeMilliseconds: Infinity`.
 This is not recommended in most cases. But it can be of interest for multi instance services.
-Read more about that topic here: [Multi Instance Services](../recommendations/multi-instance-services#consistent-evaluations)
+Read more about that topic here: [Multi Instance Services](../architectures/multi-instance-services#consistent-evaluations)
 
 ::: 
 

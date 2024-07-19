@@ -11,7 +11,7 @@ The Loli Feature Flag JavaScript/TypeScript SDK is the core piece of Loli Featur
 
 - [Installation](./installation)
 - [Client](./client/index)
-- [Recommendations](./recommendations/)
+- [Architectures](architectures/)
 
 ## Resources
 

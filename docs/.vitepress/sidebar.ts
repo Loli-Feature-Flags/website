@@ -73,13 +73,14 @@ export const SIDEBAR_CONFIG : DefaultTheme.Sidebar = {
                     ]
                 },
                 {
-                    text: "Recommendations",
+                    text: "Architectures",
                     collapsed: false,
-                    link: "/reference/sdk/recommendations",
+                    link: "/reference/sdk/architectures",
                     items: [
-                        { text: "Single Instance Services", link: "/reference/sdk/recommendations/single-instance-services" },
-                        { text: "Multi Instance Services", link: "/reference/sdk/recommendations/multi-instance-services" },
-                        { text: "Client-Side Evaluation", link: "/reference/sdk/recommendations/client-side-evaluation" },
+                        { text: "Single Instance Services", link: "/reference/sdk/architectures/single-instance-services" },
+                        { text: "Multi Instance Services", link: "/reference/sdk/architectures/multi-instance-services" },
+                        { text: "Serverless", link: "/reference/sdk/architectures/serverless" },
+                        { text: "Client-Side Evaluation", link: "/reference/sdk/architectures/client-side-evaluation" },
                     ]
                 },
             ]

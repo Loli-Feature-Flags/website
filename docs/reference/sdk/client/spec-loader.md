@@ -210,7 +210,7 @@ of the loaded data.
 This option was implemented for advanced use cases – like distributed systems that
 use a distributed cache as the primary specification source.
 
-Read more about the topic: [Multi Instance Services](../recommendations/multi-instance-services)
+Read more about the topic: [Multi Instance Services](../architectures/multi-instance-services)
 
 ::: danger
 
