@@ -83,6 +83,10 @@ export const SIDEBAR_CONFIG : DefaultTheme.Sidebar = {
                         { text: "Client-Side Evaluation", link: "/reference/sdk/architectures/client-side-evaluation" },
                     ]
                 },
+                {
+                    text: "GitHub Repository",
+                    link: "https://github.com/Loli-Feature-Flags/loli-sdk"
+                }
             ]
         },
         {
@@ -91,6 +95,10 @@ export const SIDEBAR_CONFIG : DefaultTheme.Sidebar = {
             link: "/reference/ui",
             items: [
                 { text: "Installation", link: "/reference/ui/installation" },
+                {
+                    text: "GitHub Repository",
+                    link: "https://github.com/Loli-Feature-Flags/loli-ui"
+                }
             ]
         }
     ]

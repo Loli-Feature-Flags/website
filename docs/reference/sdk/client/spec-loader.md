@@ -24,34 +24,34 @@ If you want the loader to indicate "specification not found", always
 The client will handle errors thrown inside the loader correctly.
 :::
 
-## Processor
+## Validator
 
 ### General
 
 To be more precise, the result of a spec loader must be the return result of
-a `processor` invocation.
+a `validator` invocation.
 
-A spec loader is called by a `LoliClient` with a `processor` function as an argument.
+A spec loader is called by a `LoliClient` with a `validator` function as an argument.
 
-The `processor` function validates the loaded data for you and checks that the loaded data
+The `validator` function validates the loaded data for you and checks that the loaded data
 is a valid Loli specification schema and has no semantic issues.
 
 ### Correct usage
 
 The LoliClient only accepts spec loader results that were produced by the
-given `processor` function.
+given `validator` function.
 
 ```ts
 // Correct ✅
 const client = new LoliClient(
-    async (processor) => {
-        return processor(/* ... */);
+    async (validator) => {
+        return validator(/* ... */);
     }
 );
 
 // Incorrect ❌
 const client = new LoliClient(
-    async (processor) => {
+    async (validator) => {
         return { /* ... */ }
     }
 );
@@ -59,10 +59,10 @@ const client = new LoliClient(
 
 ::: danger
 
-There is no way to bypass calling the `processor` function. There is also no way
-to tamper the data returned by the `processor` before returning it from the spec loader.
+There is no way to bypass calling the `validator` function. There is also no way
+to tamper the data returned by the `validator` before returning it from the spec loader.
 
-The LoliClient will detect if the `processor` was not called or if the data was tampered.
+The LoliClient will detect if the `validator` was not called or if the data was tampered.
 
 :::
 
@@ -73,14 +73,14 @@ The spec loader is expected to return a `Promise` and works async by default.
 You may specify an async function like so:
 
 ```ts
-const specLoader : LoliClientSpecLoader = async (processor) => {
+const specLoader : LoliClientSpecLoader = async (validator) => {
     const apiResponse = await fetchLoliSpecFromApi();
     
     if ( !apiResponse.data ) {
         throw new Error("The specification was not found/undefined/null.");
     }
     
-    return processor(apiResponse.data);
+    return validator(apiResponse.data);
 };
 ```
 
@@ -126,22 +126,22 @@ And side effects that can run after the spec loader.
 
 If you want to execute some code (even async one) as part of the spec loader
 with validated data (or invalid one), you can use the callbacks of the
-`processor` function a spec loader gets.
+`validator` function a spec loader gets.
 
 The callback `receivedInvalidData` is executed if the specification validation
-performed by the `processor` fails.
+performed by the `validator` fails.
 
 The callback `receivedValidSpec` is executed if the validation succeeds.
 
-Both callbacks are optional and can return promises. The `processor` function will
+Both callbacks are optional and can return promises. The `validator` function will
 first return when the callbacks resolve.
 
 ```ts
 const client = new LoliClient(
-    async (processor) => {
+    async (validator) => {
         const spec = await fetch("...").then(r => r.json());
         
-        return processor(spec, {
+        return validator(spec, {
             receivedInvalidData: async (invalidData, error) => {
                 console.error("Data was invalid.", invalidData, error);
             },
@@ -160,12 +160,12 @@ sure to add the `await` keywords correctly:
 
 ```ts {7,16}
 const client = new LoliClient(
-    async (processor) => {
+    async (validator) => {
         /* ... */
         
         return await distributedMutex.transaction(async () => {
-            return processor(spec, { // [!code --]
-            return await processor(spec, { // [!code ++]
+            return validator(spec, { // [!code --]
+            return await validator(spec, { // [!code ++]
                 receivedValidSpec: async (validSpec) => {
                     /* ... */
                 }
@@ -202,9 +202,9 @@ This prevents any accidental specification changes.
 
 ## Dangerous
 
-### Disabling processor validation
+### Disabling validator validation
 
-It is possible to instruct the `processor` function to skip the validation
+It is possible to instruct the `validator` function to skip the validation
 of the loaded data.
 
 This option was implemented for advanced use cases – like distributed systems that
@@ -214,21 +214,21 @@ Read more about the topic: [Multi Instance Services](../architectures/multi-inst
 
 ::: danger
 
-It is not recommended to disable the validation that the `processor` performs.
+It is not recommended to disable the validation that the `validator` performs.
 It ensures that the client works with a valid Loli specification.
 
 If you skip the evaluation, it could lead to undesired evaluation results. A `LoliClient`
 receives data from a spec loader with skipped validation will continue to work in
 [emergency mode](./evaluation.md#emergency-mode).
 
-To instruct the `processor` to skip data validation, do this:
+To instruct the `validator` to skip data validation, do this:
 
 ```ts {6-8}
 const client = new LoliClient(
-    async (processor) => {
+    async (validator) => {
         /* ... */
 
-        return await processor(spec, {
+        return await validator(spec, {
             _dangerous: {
                 assumeDataIsValidSpec: true
             }

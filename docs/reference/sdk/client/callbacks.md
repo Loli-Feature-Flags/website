@@ -12,7 +12,7 @@
 This callback is executed when the spec loader throws an error/returns
 with a rejected promise.
 
-## specLoaderProcessorCallbackFailure
+## specLoaderValidatorCallbackFailure
 
 - Optional
 - Parameters:
@@ -21,7 +21,7 @@ with a rejected promise.
   - `cause?: unknown`
     - Optional cause.
 
-This callback is executed when the spec loader processor
+This callback is executed when the spec loader validator
 executes (if specified) one of its callbacks and detects that they
 throw an error.
 

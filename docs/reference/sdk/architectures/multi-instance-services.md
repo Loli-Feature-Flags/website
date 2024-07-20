@@ -19,7 +19,7 @@ on the backend side. This way, the Loli specification that may hold sensitive da
 
 ## Temporarily Inconsistent Evaluations
 
-The simplest case, that each service instance
+The simplest case is that each service instance
 - initiates a `LoliClient` instance,
 - passes the [Spec Loader](../client/spec-loader) to the client,
 - and uses it like normal.
@@ -28,7 +28,7 @@ No special logic inside the spec loader. As services possibly started at differe
 instance possibly fetch the Loli specification at different times.
 
 When storing a new Loli specification at your storage location, it might happen that some service instances
-have the newest version, while others still work with the old cached one.
+temporarily have the newest version, while others still work with the old cached one.
 
 **You can lower the impact** by reducing the [`specCacheStaleTimeMilliseconds`](../client/options#speccachestaletimemilliseconds).
 The lower the stale time, the earlier instances automatically reload the specifications.
@@ -44,7 +44,8 @@ increase costs (e.g. if you fetch from a storage like S3/Vercel Edge Config).
 ## Consistent evaluations
 
 If you instead need all service instances to (nearly) always evaluate with the same Loli
-specification version/copy, you need to do some extra work.
+specification version/copy, you need to do some extra work respectively choose a 
+specific primary storage solution for the Loli specification.
 
 ### Pushing Specification Changes
 
@@ -70,26 +71,77 @@ specification at any point in time.
 
 :::
 
-### Distributed Cache and Mutex
+### Fast Primary Storage
 
-If you really need a 100% guarantee that all instances of a service use the same
-feature flag specification at any point in time, you can achieve this:
-- by disabling the internal cache of a `LoliClient`
-- by using a **distributed cache**
-- by using a **distributed locking mechanism**
+Let's say you have a Redis instance. And persistent storage is enabled for that instance.
+
+In this case, you can use such a Redis instance as the primary storage location for your
+Loli feature flags specification.
+
+Then you can configure your client with a disabled internal cache and a spec loader
+which only reads from Redis and effectively becomes a "spec getter" for the client.
+
+```ts
+const client = new LoliClient(
+    async (validator) => {
+        const specifcation = await redis.get("loli-specification");
+
+        if ( !specification ) {
+            throw new Error("Loli feature flags specification could not be found in Redis.");
+        }
+        
+        return validator(specification);
+    },
+    {
+        // The internally cached spec gets immediately
+        // stale which causes the spec loader to be
+        // always called.
+        specCacheStaleTimeMilliseconds: -1,
+
+        // Using Infinity here makes the client always
+        // wait for the spec loader to finish.
+        specReloadMaxBlockingWaitMilliseconds: Infinity,
+    }
+);
+```
+
+::: tip
+
+Using a primary storage solution like a Redis instance does not only give you a
+guarantee that all services use the same specification.
+
+It can also greatly reduce read costs for multi instance services compared to
+e.g. each of your 20 instances fetching the specification from an API.
+
+:::
+
+::: warning
+
+You do not have to use Redis for this. But we recommend that you
+use a storage that enables _very fast reads_, so that feature flag
+evaluations don't wait too long for the spec loader to finish.
+
+:::
+
+### Distributed Cache and Locks
+
+If you can't use a storage with fast read capabilities **as the primary storage**, but still
+have a distributed **cache** and **locking mechanisms**, you can also guarantee
+- that all instances always use the same specification
+- while only allowing one instance to fetch the specification from the primary storage and storing it in the distributed cache.
 
 The following code example explains the pattern you have to use.
 
 ```ts
 const client = new LoliClient(
-    async (processor) => {
+    async (validator) => {
         const cachedSpecification = await distributedCache.get("loli-specification");
         
         if ( cachedSpecification ) {
             // As we control the cache and only put validated data to
             // the cache, we can assume the cached spec is valid and
-            // skip the processor validation
-            return processor(cachedSpecification, {
+            // skip the validator validation
+            return validator(cachedSpecification, {
                 _dangerous: {
                   assumeDataIsValidSpec: true
                 }
@@ -107,8 +159,8 @@ const client = new LoliClient(
             if ( cachedSpecification ) {
               // As we control the cache and only put validated data to
               // the cache, we can assume the cached spec is valid and
-              // skip the processor validation
-              return await processor(cachedSpecification, {
+              // skip the validator validation
+              return await validator(cachedSpecification, {
                 _dangerous: {
                   assumeDataIsValidSpec: true
                 }
@@ -120,7 +172,7 @@ const client = new LoliClient(
             const spec = fetch("...").then(r => r.json());
             
             // The await keyword is important!
-            return await processor(spec, {
+            return await validator(spec, {
                 // We use this callback to write the validated
                 // spec to the distributed cahce. Still as part
                 // of the distributed transaction.
@@ -144,9 +196,6 @@ const client = new LoliClient(
 ```
 
 ::: tip
-
-This pattern not only gives you a 100% guarantee that all instance of a services
-always use the same specification at any point in time.
 
 This pattern can also drastically reduce the nr. of reads from the primary storage location
 (which is not the cache) which could also lead to a lower cost footprint.
