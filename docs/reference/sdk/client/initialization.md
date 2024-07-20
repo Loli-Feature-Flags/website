@@ -15,7 +15,7 @@ const client = new LoliClient(
 
 The class `LoliClient` accepts the following parameters:
 - `specLoader: LoliClientSpecLoader` (**required**)
-- `options: LoliClientOptions` (optional)
-- `specLoader: LoliClientCallbacks` (optional)
+- `options?: LoliClientOptions` (optional)
+- `specLoader?: LoliClientCallbacks` (optional)
 
 They are explained in-depth in the following sections.

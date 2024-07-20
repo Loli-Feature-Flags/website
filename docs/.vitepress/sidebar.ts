@@ -95,6 +95,9 @@ export const SIDEBAR_CONFIG : DefaultTheme.Sidebar = {
             link: "/reference/ui",
             items: [
                 { text: "Installation", link: "/reference/ui/installation" },
+                { text: "Mounting", link: "/reference/ui/mounting" },
+                { text: "Options", link: "/reference/ui/options" },
+                { text: "Interface", link: "/reference/ui/interface" },
                 {
                     text: "GitHub Repository",
                     link: "https://github.com/Loli-Feature-Flags/loli-ui"
