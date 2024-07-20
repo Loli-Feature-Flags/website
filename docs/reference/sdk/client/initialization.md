@@ -2,15 +2,15 @@
 
 Creating a new `LoliClient` is as easy as importing the class and creating a new instance:
 
-```ts{7}
+```ts
 import { LoliClient, type LoliClientSpecLoader } from '@loli-feature-flags/loli-sdk';
 
-const specLoader : LoliClientSpecLoader = async (validator) => {
-    const data = await fetch("...").then(r => r.json());
-    return validator(data);
-};
-
-const client = new LoliClient(specLoader);
+const client = new LoliClient(
+    async (validator) => {
+        const data = await fetch("...").then(r => r.json());
+        return validator(data);
+    }
+);
 ```
 
 The class `LoliClient` accepts the following parameters:
