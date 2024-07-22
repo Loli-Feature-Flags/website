@@ -83,10 +83,8 @@ export const SIDEBAR_CONFIG : DefaultTheme.Sidebar = {
                         { text: "Client-Side Evaluation", link: "/reference/sdk/architectures/client-side-evaluation" },
                     ]
                 },
-                {
-                    text: "GitHub Repository",
-                    link: "https://github.com/Loli-Feature-Flags/loli-sdk"
-                }
+                { text: "GitHub Repository", link: "https://github.com/Loli-Feature-Flags/loli-sdk" },
+                { text: "NPM Package", link: "https://www.npmjs.com/package/@loli-feature-flags/loli-sdk" }
             ]
         },
         {
@@ -98,10 +96,8 @@ export const SIDEBAR_CONFIG : DefaultTheme.Sidebar = {
                 { text: "Mounting", link: "/reference/ui/mounting" },
                 { text: "Options", link: "/reference/ui/options" },
                 { text: "Interface", link: "/reference/ui/interface" },
-                {
-                    text: "GitHub Repository",
-                    link: "https://github.com/Loli-Feature-Flags/loli-ui"
-                }
+                { text: "GitHub Repository", link: "https://github.com/Loli-Feature-Flags/loli-ui" },
+                { text: "NPM Package", link: "https://www.npmjs.com/package/@loli-feature-flags/loli-ui" },
             ]
         }
     ]
