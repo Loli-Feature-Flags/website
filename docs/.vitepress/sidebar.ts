@@ -99,6 +99,26 @@ export const SIDEBAR_CONFIG : DefaultTheme.Sidebar = {
                 { text: "GitHub Repository", link: "https://github.com/Loli-Feature-Flags/loli-ui" },
                 { text: "NPM Package", link: "https://www.npmjs.com/package/@loli-feature-flags/loli-ui" },
             ]
+        },
+        {
+            text: "Specification",
+            collapsed: false,
+            link: "/reference/specification",
+            items: [
+                {
+                    text: "Schema",
+                    collapsed: false,
+                    link: "/reference/specification/schema",
+                    items: [
+                        { text: "Feature Flag", link: "/reference/specification/schema/feature-flag" },
+                        { text: "Segment", link: "/reference/specification/schema/segment" },
+                        { text: "Evaluation Context", link: "/reference/specification/schema/evaluation-context" },
+                        { text: "Property", link: "/reference/specification/schema/property" },
+                        { text: "Condition Set", link: "/reference/specification/schema/condition-set" },
+                    ]
+                },
+                { text: "Semantic Validity", link: "/reference/specification/semantic-validity" },
+            ]
         }
     ]
 }
