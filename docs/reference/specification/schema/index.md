@@ -15,9 +15,17 @@ The Loli spec root object looks like that:
 }
 ```
 
+::: info
+
+Feature flags, segments, and evaluation context properties are seen as
+Loli spec **entities**. So whenever the term "spec entity" is used, it can
+mean a feature flag, segment, property.
+
+::: 
+
 ## featureFlags
 
-- Type: Array of [Feature Flag](./feature-flag.md)
+- Type: Array of [Feature Flag](feature-flag/index)
 - Required
 
 This array holds all feature flags you have defined. These can be evaluated in the end.

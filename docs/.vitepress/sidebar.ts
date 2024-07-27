@@ -110,7 +110,26 @@ export const SIDEBAR_CONFIG : DefaultTheme.Sidebar = {
                     collapsed: false,
                     link: "/reference/specification/schema",
                     items: [
-                        { text: "Feature Flag", link: "/reference/specification/schema/feature-flag" },
+                        {
+                            text: "Feature Flag",
+                            collapsed: false,
+                            link: "/reference/specification/schema/feature-flag",
+                            items: [
+                                { text: "Boolean", link: "/reference/specification/schema/feature-flag/boolean" },
+                                { text: "Number", link: "/reference/specification/schema/feature-flag/number" },
+                                { text: "String", link: "/reference/specification/schema/feature-flag/string" },
+                                {
+                                    text: "Rules",
+                                    link: "/reference/specification/schema/feature-flag/rules",
+                                    collapsed: false,
+                                    items: [
+                                        { text: "Boolean", link: "/reference/specification/schema/feature-flag/rules/boolean" },
+                                        { text: "Number", link: "/reference/specification/schema/feature-flag/rules/number" },
+                                        { text: "String", link: "/reference/specification/schema/feature-flag/rules/string" },
+                                    ]
+                                },
+                            ],
+                        },
                         { text: "Segment", link: "/reference/specification/schema/segment" },
                         { text: "Evaluation Context", link: "/reference/specification/schema/evaluation-context" },
                         { text: "Property", link: "/reference/specification/schema/property" },
