@@ -3,7 +3,7 @@
 A boolean feature flag produces boolean evaluation values and is
 denoted by a `type` value of `"boolean"`.
 
-Boolean feature flags  have the shared feature flag properties as described in
+Boolean feature flags have the shared feature flag properties as described in
 [Feature Flag](./index.md) and has the additional properties on this page.
 
 The schema for a boolean feature flag looks roughly like this:
@@ -57,7 +57,14 @@ as the evaluation value.
 An array of zero to N-many rules that can have conditions and specified
 output values in case the conditions are met.
 
-Check out [Boolean Feature Flag Rule](./rules/boolean.md) for more details.
+The order of the rules determines the evaluation order. Rules are evaluated
+from front to end. If a rule's conditions are met, it's `valuesOnMatch`
+(check out rule details) are returned as the evaluation value.
+
+If no rules' conditions are met, the `defaultValue` of the feature flag
+is returned as the evaluation value.
+
+Check out [Boolean Feature Flag Rule](../feature-flag-rule/boolean.md) for more details.
 
 ## defaultValue
 

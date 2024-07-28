@@ -38,8 +38,10 @@ to specify which feature flag to evaluate.
 - Required
 - Pattern: `/^[a-zA-Z0-9]+([-_][a-zA-Z0-9]+)*$/`
 
-The name of the feature flag. The name has to be specified
-to the SDK to tell it which feature flag(s) to evaluate.
+The name of the feature flag. It has to be unique across all feature flags of a Loli spec.
+
+The name needs to be specified for a feature flag evaluation so the SDK knows
+which feature flag(s) to evaluate. 
 
 Must only contain letters and numbers separated by single dashes or underscores.
 
