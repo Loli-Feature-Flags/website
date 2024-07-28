@@ -18,7 +18,7 @@ explained below.
 {
   "enabled": true,
   "conditionSet": { 
-    // ConditionSet content 
+    // condition set content 
   },
   
   // subtype specific attributes ...
@@ -45,12 +45,12 @@ is evaluated as part of a feature flag evaluation:
 - Type: `ConditionSet`
 - Required
 
-The rules ConditionSet describes the conditions to be checked. If the
-ConditionSet evaluates to `true`, the rule is seen as a "match", and the
+The rule's condition set describes the conditions to be checked. If the
+condition set evaluates to `true`, the rule is seen as a "match", and the
 `valuesOnMatch` of the subtypes are used as the feature flag evaluation
 result/value.
 
-For more details, read the [Condition Set](../condition-set.md) docs.
+For more details, check out [Condition Set](../condition-set.md).
 
 ## Subtypes
 

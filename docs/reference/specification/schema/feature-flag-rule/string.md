@@ -14,7 +14,7 @@ The schema of a string feature flag rule looks like that:
 {
   "enabled": true,
   "conditionSet": {
-    // ConditionSet content 
+    // condition set content 
   },
   
   "valuesOnMatch": [
