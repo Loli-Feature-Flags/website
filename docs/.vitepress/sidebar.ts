@@ -55,13 +55,11 @@ export const SIDEBAR_CONFIG : DefaultTheme.Sidebar = {
     '/reference': [
         {
             text: "SDK",
-            collapsed: false,
             link: "/reference/sdk",
             items: [
                 { text: "Installation", link: "/reference/sdk/installation" },
                 {
                     text: "Client",
-                    collapsed: false,
                     link: "/reference/sdk/client",
                     items: [
                         { text: "Initialization", link: "/reference/sdk/client/initialization" },
@@ -74,7 +72,6 @@ export const SIDEBAR_CONFIG : DefaultTheme.Sidebar = {
                 },
                 {
                     text: "Architectures",
-                    collapsed: false,
                     link: "/reference/sdk/architectures",
                     items: [
                         { text: "Single Instance Services", link: "/reference/sdk/architectures/single-instance-services" },
@@ -89,7 +86,6 @@ export const SIDEBAR_CONFIG : DefaultTheme.Sidebar = {
         },
         {
             text: "Management UI",
-            collapsed: false,
             link: "/reference/ui",
             items: [
                 { text: "Installation", link: "/reference/ui/installation" },
@@ -102,32 +98,28 @@ export const SIDEBAR_CONFIG : DefaultTheme.Sidebar = {
         },
         {
             text: "Specification",
-            collapsed: false,
             link: "/reference/specification",
             items: [
                 {
                     text: "Schema",
-                    collapsed: false,
                     link: "/reference/specification/schema",
                     items: [
                         {
                             text: "Feature Flag",
-                            collapsed: false,
                             link: "/reference/specification/schema/feature-flag",
                             items: [
                                 { text: "Boolean", link: "/reference/specification/schema/feature-flag/boolean" },
                                 { text: "Number", link: "/reference/specification/schema/feature-flag/number" },
                                 { text: "String", link: "/reference/specification/schema/feature-flag/string" },
-                                {
-                                    text: "Rules",
-                                    link: "/reference/specification/schema/feature-flag/rules",
-                                    collapsed: false,
-                                    items: [
-                                        { text: "Boolean", link: "/reference/specification/schema/feature-flag/rules/boolean" },
-                                        { text: "Number", link: "/reference/specification/schema/feature-flag/rules/number" },
-                                        { text: "String", link: "/reference/specification/schema/feature-flag/rules/string" },
-                                    ]
-                                },
+                            ],
+                        },
+                        {
+                            text: "Feature Flag Rule",
+                            link: "/reference/specification/schema/feature-flag-rule",
+                            items: [
+                                { text: "Boolean", link: "/reference/specification/schema/feature-flag-rule/boolean" },
+                                { text: "Number", link: "/reference/specification/schema/feature-flag-rule/number" },
+                                { text: "String", link: "/reference/specification/schema/feature-flag-rule/string" },
                             ],
                         },
                         { text: "Segment", link: "/reference/specification/schema/segment" },
