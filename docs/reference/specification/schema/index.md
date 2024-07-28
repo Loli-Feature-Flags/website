@@ -1,6 +1,6 @@
 # Schema
 
-The [SDK](../../sdk) defines a `LoliSpec` type and a `LoliSpecSchema` [Zod](https://github.com/colinhacks/zod) schema.
+The [SDK](../../sdk/index.md) defines a `LoliSpec` type and a `LoliSpecSchema` [Zod](https://github.com/colinhacks/zod) schema.
 These define the expected shape of a JSON Loli spec.
 
 The Loli spec root object looks like that:

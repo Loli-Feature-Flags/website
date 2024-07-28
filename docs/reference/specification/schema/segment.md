@@ -42,4 +42,4 @@ Must only contain letters and numbers separated by single dashes or underscores.
 The segment's condition set describes the conditions to be checked. If the
 condition set evaluates to `true`, the segment is evaluated as `true`.
 
-For more details, check out [Condition Set](../condition-set.md).
+For more details, check out [Condition Set](./condition-set.md).
