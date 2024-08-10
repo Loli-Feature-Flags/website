@@ -45,4 +45,4 @@ to exactly sum up to 100.
 
 If there are multiple value on match entries and the corresponding value is matched,
 the values are **deterministically** distributed across all evaluations based
-on the given rollout percentages and based on [Rollout Discriminator Properties](../property.md#rolloutDiscriminator).
+on the given rollout percentages and based on [Rollout Discriminator Properties](../property.md#rolloutdiscriminator).
