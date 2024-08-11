@@ -126,6 +126,28 @@ export const SIDEBAR_CONFIG : DefaultTheme.Sidebar = {
                         { text: "Evaluation Context", link: "/reference/specification/schema/evaluation-context" },
                         { text: "Property", link: "/reference/specification/schema/property" },
                         { text: "Condition Set", link: "/reference/specification/schema/condition-set" },
+                        {
+                            text: "Condition",
+                            link: "/reference/specification/schema/condition",
+                            items: [
+                                {
+                                    text: "Property Conditions",
+                                    link: "/reference/specification/schema/condition/property",
+                                    items: [
+                                        { text: "String", link: "/reference/specification/schema/condition/property/string" },
+                                        { text: "String Array", link: "/reference/specification/schema/condition/property/string-array" },
+                                        { text: "Number", link: "/reference/specification/schema/condition/property/number" },
+                                        { text: "Number Array", link: "/reference/specification/schema/condition/property/number-array" },
+                                        { text: "Boolean", link: "/reference/specification/schema/condition/property/boolean" },
+                                        { text: "Boolean Array", link: "/reference/specification/schema/condition/property/boolean-array" },
+                                    ]
+                                },
+                                { text: "Always True", link: "/reference/specification/schema/condition/always-true" },
+                                { text: "Date Time", link: "/reference/specification/schema/condition/date-time" },
+                                { text: "Segment", link: "/reference/specification/schema/condition/segment" },
+                                { text: "Condition Set", link: "/reference/specification/schema/condition/condition-set" },
+                            ]
+                        },
                     ]
                 },
                 { text: "Semantic Validity", link: "/reference/specification/semantic-validity" },

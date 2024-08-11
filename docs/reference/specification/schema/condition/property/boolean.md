@@ -1,0 +1,1 @@
+# Boolean Property Condition

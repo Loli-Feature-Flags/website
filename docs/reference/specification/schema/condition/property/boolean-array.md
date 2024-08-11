@@ -1,0 +1,1 @@
+# Boolean Array Property Condition

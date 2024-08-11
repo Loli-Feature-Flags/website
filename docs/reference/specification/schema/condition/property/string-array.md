@@ -1,0 +1,1 @@
+# String Array Property Condition

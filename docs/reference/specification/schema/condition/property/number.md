@@ -1,0 +1,1 @@
+# Number Property Condition

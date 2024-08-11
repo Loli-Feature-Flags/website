@@ -1,0 +1,1 @@
+# Number Array Property Condition
