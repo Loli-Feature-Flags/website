@@ -60,6 +60,7 @@ export const SIDEBAR_CONFIG : DefaultTheme.Sidebar = {
                 { text: "Installation", link: "/reference/sdk/installation" },
                 {
                     text: "Client",
+                    collapsed: true,
                     link: "/reference/sdk/client",
                     items: [
                         { text: "Initialization", link: "/reference/sdk/client/initialization" },
@@ -72,6 +73,7 @@ export const SIDEBAR_CONFIG : DefaultTheme.Sidebar = {
                 },
                 {
                     text: "Architectures",
+                    collapsed: true,
                     link: "/reference/sdk/architectures",
                     items: [
                         { text: "Single Instance Services", link: "/reference/sdk/architectures/single-instance-services" },
@@ -102,10 +104,12 @@ export const SIDEBAR_CONFIG : DefaultTheme.Sidebar = {
             items: [
                 {
                     text: "Schema",
+                    collapsed: true,
                     link: "/reference/specification/schema",
                     items: [
                         {
                             text: "Feature Flag",
+                            collapsed: true,
                             link: "/reference/specification/schema/feature-flag",
                             items: [
                                 { text: "Boolean", link: "/reference/specification/schema/feature-flag/boolean" },
@@ -115,6 +119,7 @@ export const SIDEBAR_CONFIG : DefaultTheme.Sidebar = {
                         },
                         {
                             text: "Feature Flag Rule",
+                            collapsed: true,
                             link: "/reference/specification/schema/feature-flag-rule",
                             items: [
                                 { text: "Boolean", link: "/reference/specification/schema/feature-flag-rule/boolean" },
@@ -128,17 +133,19 @@ export const SIDEBAR_CONFIG : DefaultTheme.Sidebar = {
                         { text: "Condition Set", link: "/reference/specification/schema/condition-set" },
                         {
                             text: "Condition",
+                            collapsed: true,
                             link: "/reference/specification/schema/condition",
                             items: [
                                 {
                                     text: "Property Conditions",
+                                    collapsed: true,
                                     link: "/reference/specification/schema/condition/property",
                                     items: [
                                         { text: "String", link: "/reference/specification/schema/condition/property/string" },
-                                        { text: "String Array", link: "/reference/specification/schema/condition/property/string-array" },
                                         { text: "Number", link: "/reference/specification/schema/condition/property/number" },
-                                        { text: "Number Array", link: "/reference/specification/schema/condition/property/number-array" },
                                         { text: "Boolean", link: "/reference/specification/schema/condition/property/boolean" },
+                                        { text: "String Array", link: "/reference/specification/schema/condition/property/string-array" },
+                                        { text: "Number Array", link: "/reference/specification/schema/condition/property/number-array" },
                                         { text: "Boolean Array", link: "/reference/specification/schema/condition/property/boolean-array" },
                                     ]
                                 },

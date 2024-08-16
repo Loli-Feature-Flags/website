@@ -3,7 +3,18 @@
 A condition set is a list of conditions. These conditions are evaluated and
 combined by a logical operator denoted by the `operator` attribute.
 
-## operator
+## Schema
+
+```json
+{
+  "operator": "and",
+  "conditions": [ /* ... */ ]
+}
+```
+
+## Attributes
+
+### operator
 
 - Type: `"and" | "or" | "nand" | "nor"`
 - Required
@@ -46,7 +57,7 @@ const norResult =
 ```
 
 
-## conditions
+### conditions
 
 - Type: `Condition[]`
 - Required

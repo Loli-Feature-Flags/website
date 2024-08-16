@@ -7,13 +7,17 @@ For more details on properties, check out [Property](./property.md).
 
 The schema of the evaluation context looks like this:
 
+## Schema
+
 ```json
 {
   "properties": []
 }
 ```
 
-## properties
+## Attributes
+
+### properties
 
 - Type: Array of `Property`
 - Required

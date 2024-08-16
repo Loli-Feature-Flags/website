@@ -8,6 +8,8 @@ Boolean feature flags have the shared feature flag properties as described in
 
 The schema for a boolean feature flag looks roughly like this:
 
+## Schema
+
 ```json
 {
   "id": "...",
@@ -24,14 +26,16 @@ The schema for a boolean feature flag looks roughly like this:
 }
 ```
 
-## type
+## Attributes
+
+### type
 
 - Type: `"boolean"`
 - Required
 
 Designated the feature flag object as a boolean feature flag.
 
-## targeting
+### targeting
 
 - Type: `{ enabled: boolean, rules: BooleanFeatureFlagRule[] }`
 - Required
@@ -39,7 +43,7 @@ Designated the feature flag object as a boolean feature flag.
 An object describing targeting rules which can be turned on or off
 completely or individually.
 
-### enabled
+#### enabled
 
 - Type: `boolean`
 - Required
@@ -49,7 +53,7 @@ If `true`, the `rules` are checked during the feature flag evaluation.
 If `false`, all `rules` are ignored and the `defaultValue` is used
 as the evaluation value.
 
-### rules
+#### rules
 
 - Type: Array of `BooleanFeatureFlagRule`
 - Required
@@ -66,7 +70,7 @@ is returned as the evaluation value.
 
 Check out [Boolean Feature Flag Rule](../feature-flag-rule/boolean.md) for more details.
 
-## defaultValue
+### defaultValue
 
 - Type: `boolean`
 - Required

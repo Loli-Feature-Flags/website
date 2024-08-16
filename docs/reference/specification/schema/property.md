@@ -6,6 +6,8 @@ to target, for example, specific users based on their attributes.
 
 The schema of a property looks like that:
 
+## Schema
+
 ```json
 {
   "id": "8asd675ws",
@@ -16,7 +18,9 @@ The schema of a property looks like that:
 }
 ```
 
-## id
+## Attributes
+
+### id
 
 - Type: `string`
 - Required
@@ -24,7 +28,7 @@ The schema of a property looks like that:
 An ID that is unique across all Loli spec entities. The ID
 is used only within the Loli spec.
 
-## type
+### type
 
 - Type: `"string" | "number" | "boolean" | "stringArray" | "numberArray" | "booleanArray"`
 - Required
@@ -40,7 +44,7 @@ evaluate to `false`.
 Conditions checking for a property of a certain data type will also always evaluate to false,
 if the evaluation context holds a property value of the wrong data type.
 
-## name
+### name
 
 - Type: `string`
 - Required
@@ -48,7 +52,7 @@ if the evaluation context holds a property value of the wrong data type.
 Human-readable name of this property. Only used to display the property correctly visually like
 in Loli UI.
 
-## path
+### path
 
 - Type: `string[]`
 - Required
@@ -78,7 +82,7 @@ const evaluationContext = {
 //  > evaluationContext.betaFeatures?.[0]
 ```
 
-## rolloutDiscriminator
+### rolloutDiscriminator
 
 - Type: `boolean`
 - Required

@@ -1,9 +1,11 @@
-# Schema
+# Loli Specification Schema
 
 The [SDK](../../sdk/index.md) defines a `LoliSpec` type and a `LoliSpecSchema` [Zod](https://github.com/colinhacks/zod) schema.
 These define the expected shape of a JSON Loli spec.
 
 The Loli spec root object looks like that:
+
+## Schema
 
 ```json
 {
@@ -24,7 +26,9 @@ mean a feature flag, segment, property.
 
 ::: 
 
-## schemaVersion
+## Attributes
+
+### schemaVersion
 
 - Type: `number`
 - Valid values: `1`
@@ -37,14 +41,14 @@ are introduced.
 Then Loli spec consumers can correctly differentiate Loli spec versions based on this field
 and work with them correctly.
 
-## featureFlags
+### featureFlags
 
 - Type: Array of [Feature Flag](feature-flag/index)
 - Required
 
 This array holds all feature flags you have defined. These can be evaluated in the end.
 
-## segments
+### segments
 
 - Type: Array of [Segment](./segment.md)
 - Required
@@ -52,7 +56,17 @@ This array holds all feature flags you have defined. These can be evaluated in t
 This array holds all segments you have defined. These can be used in conditions within
 feature flags and even in other segments.
 
-## evaluationContext
+### evaluationContext
 
 - Type: [Evaluation Context](./evaluation-context.md)
 - Required
+
+## Further Reads
+
+- [Feature Flag](./feature-flag/index.md)
+- [Feature Flag Rule](./feature-flag/index.md)
+- [Segment](./segment.md)
+- [Evaluation Context](./evaluation-context.md)
+- [Property](./property.md)
+- [Condition Set](./condition-set)
+- [Condition](./condition/index.md)

@@ -6,6 +6,8 @@ segments.
 
 The schema of a segment looks like that:
 
+## Schema
+
 ```json
 {
   "id": "jh2g34234",
@@ -16,7 +18,9 @@ The schema of a segment looks like that:
 }
 ```
 
-## id
+## Attributes
+
+### id
 
 - Type: `string`
 - Required
@@ -24,7 +28,7 @@ The schema of a segment looks like that:
 An ID that is unique across all Loli spec entities. The ID
 is used only within the Loli spec.
 
-## name
+### name
 
 - Type: `string`
 - Required
@@ -34,7 +38,7 @@ The name of the segment. It has to be unique across all segments of a Loli spec.
 
 Must only contain letters and numbers separated by single dashes or underscores.
 
-## conditionSet
+### conditionSet
 
 - Type: `ConditionSet`
 - Required

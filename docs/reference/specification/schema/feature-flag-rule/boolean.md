@@ -10,6 +10,8 @@ has the properties listed on this page.
 
 The schema of a boolean feature flag rule looks like that:
 
+## Schema
+
 ```json
 {
   "enabled": true,
@@ -26,7 +28,7 @@ The schema of a boolean feature flag rule looks like that:
 }
 ```
 
-## valuesOnMatch
+### valuesOnMatch
 
 - Type: Array of `{ value: boolean, rolloutPercentage: number }`
   - `value`: value to serve as feature flag evaluation value on condition set match 

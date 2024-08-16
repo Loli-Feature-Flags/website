@@ -13,6 +13,8 @@ For each output data type exists a distinct feature flag type.
 All feature flag types share some properties. These shared properties are
 explained below.
 
+## Schema
+
 ```json
 {
   "id": "8a6sd65as7",
@@ -23,7 +25,9 @@ explained below.
 }
 ```
 
-## id
+## Attributes
+
+### id
 
 - Type: `string`
 - Required
@@ -32,7 +36,7 @@ An ID that is unique across all Loli spec entities. The ID
 is used only within the Loli spec. It is not used by the SDK
 to specify which feature flag to evaluate.
 
-## name
+### name
 
 - Type: `string`
 - Required
@@ -45,7 +49,7 @@ which feature flag(s) to evaluate.
 
 Must only contain letters and numbers separated by single dashes or underscores.
 
-## description
+### description
 
 - Type: `string`
 - Required

@@ -14,6 +14,8 @@ rule types:
 All feature flag rule types share some properties. These shared properties are
 explained below.
 
+## Schema
+
 ```json
 {
   "enabled": true,
@@ -25,7 +27,9 @@ explained below.
 }
 ```
 
-## enabled
+## Attributes
+
+### enabled
 
 - Type: `boolean`
 - Required
@@ -40,7 +44,7 @@ is evaluated as part of a feature flag evaluation:
 | `false`                         | `true`         | no                 |
 | `false`                         | `false`        | no                 |
 
-## conditionSet
+### conditionSet
 
 - Type: `ConditionSet`
 - Required

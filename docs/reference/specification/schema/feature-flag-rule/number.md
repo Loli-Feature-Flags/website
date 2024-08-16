@@ -10,6 +10,8 @@ has the properties listed on this page.
 
 The schema of a number feature flag rule looks like that:
 
+## Schema
+
 ```json
 {
   "enabled": true,
@@ -26,7 +28,9 @@ The schema of a number feature flag rule looks like that:
 }
 ```
 
-## valuesOnMatch
+## Attributes
+
+### valuesOnMatch
 
 - Type: Array of `{ value: number, rolloutPercentage: number }`
     - `value`: value to serve as feature flag evaluation value on condition set match

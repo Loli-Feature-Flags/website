@@ -12,5 +12,5 @@ The specification is written as JSON. The schema of the JSON is currently define
 
 ## Further Reads
 
-- [Schema](./schema/index.md)
+- [Loli Specification Schema](./schema/index.md)
 - [Semantic Validity](./semantic-validity.md)
