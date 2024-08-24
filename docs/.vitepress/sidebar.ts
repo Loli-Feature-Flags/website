@@ -169,7 +169,24 @@ export const SIDEBAR_CONFIG : DefaultTheme.Sidebar = {
                         },
                     ]
                 },
-                { text: "Semantic Validity", link: "/reference/specification/semantic-validity" },
+                {
+                    text: "Semantic Validity",
+                    collapsed: true,
+                    link: "/reference/specification/semantic-validity",
+                    items: [
+                        { text: "Duplicated IDs", link: "/reference/specification/semantic-validity/duplicated-ids" },
+
+                        { text: "Duplicated Feature Flag Name", link: "/reference/specification/semantic-validity/duplicated-feature-flag-name.md" },
+                        { text: "Duplicated Property Path", link: "/reference/specification/semantic-validity/duplicated-property-path.md" },
+                        { text: "Condition And Property Data Type Mismatch", link: "/reference/specification/semantic-validity/condition-property-data-type-mismatch.md" },
+                        { text: "Non-Existing Property Referenced", link: "/reference/specification/semantic-validity/non-existing-property-referenced.md" },
+                        { text: "Non-Existing Segment Referenced", link: "/reference/specification/semantic-validity/non-existing-segment-referenced.md" },
+                        { text: "No Values On Match", link: "/reference/specification/semantic-validity/no-values-on-match.md" },
+                        { text: "Rollout Percentage Sum Not 100%", link: "/reference/specification/semantic-validity/rollout-percentage-sum-not-one-hundred.md" },
+                        { text: "Cyclic Dependencies Present", link: "/reference/specification/semantic-validity/cyclic-dependencies-present.md" },
+                        { text: "Entity Is Part Of Cyclic Dependency", link: "/reference/specification/semantic-validity/entity-part-of-cyclic-dependency.md" },
+                    ]
+                },
             ]
         },
         {

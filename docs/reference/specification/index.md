@@ -8,9 +8,9 @@ A Loli Feature Flags Specification (short "Loli spec") describes a feature flag 
 The specification is written as JSON. The schema of the JSON is currently defined by the
 [SDK](../sdk/index.md) via a [Zod](https://github.com/colinhacks/zod) Schema.
 
-[Semantic Validation](./semantic-validity.md) is also covered by the SDK.
+[Semantic Validation](semantic-validity/index) is also covered by the SDK.
 
 ## Further Reads
 
 - [Loli Specification Schema](./schema/index.md)
-- [Semantic Validity](./semantic-validity.md)
+- [Semantic Validity](semantic-validity/index)
