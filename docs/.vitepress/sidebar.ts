@@ -10,6 +10,14 @@ export const SIDEBAR_CONFIG : DefaultTheme.Sidebar = {
                 { text: "Imprint", link: '/legal/imprint' },
                 { text: "Data Privacy", link: '/legal/data-privacy' },
             ]
+        },
+        {
+            text: "Guide",
+            link: "/guide/introduction"
+        },
+        {
+            text: "Reference",
+            link: "/reference/sdk"
         }
     ],
     '/guide/': [
@@ -50,6 +58,10 @@ export const SIDEBAR_CONFIG : DefaultTheme.Sidebar = {
         {
             text: "Reference",
             link: "/reference/sdk"
+        },
+        {
+            text: "Legal",
+            link: "/legal/license"
         }
     ],
     '/reference': [
@@ -159,6 +171,14 @@ export const SIDEBAR_CONFIG : DefaultTheme.Sidebar = {
                 },
                 { text: "Semantic Validity", link: "/reference/specification/semantic-validity" },
             ]
-        }
+        },
+        {
+            text: "Guide",
+            link: "/guide/introduction"
+        },
+        {
+            text: "Legal",
+            link: "/legal/license"
+        },
     ]
 }

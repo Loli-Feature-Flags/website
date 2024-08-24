@@ -7,7 +7,7 @@ There are various condition [subtypes](#subtypes). They are differentiated by a 
 
 ## Subtypes
 
-- [Property Condition(s)](./property)
+- [Property Condition(s)](./property/index.md)
 - [Always True Condition(s)](./always-true.md)
 - [Condition Set Condition](./condition-set.md)
 - [Date Time Condition](./date-time.md)
