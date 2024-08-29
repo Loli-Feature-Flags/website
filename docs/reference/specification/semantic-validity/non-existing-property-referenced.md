@@ -2,7 +2,7 @@
 
 This issue type is denoted by the type `SemanticIssueType.NON_EXISTING_PROPERTY_REFERENCED`.
 
-Such an issue is detected if a [property condition](../schema/condition/property) references
+Such an issue is detected if a [property condition](../schema/condition/property/index.md) references
 a property (by ID) that does not exist in the Loli specification.
 
 For every single property condition that references an unknown property, een issue of this
