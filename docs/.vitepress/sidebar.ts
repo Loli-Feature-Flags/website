@@ -26,31 +26,33 @@ export const SIDEBAR_CONFIG : DefaultTheme.Sidebar = {
             collapsed: false,
             items: [
                 { text: "What is Loli?", link: "/guide/introduction" },
+                { text: "Features", link: "/guide/features" },
                 { text: "Getting Started", link: "/guide/getting-started" },
                 { text: "Terminology", link: "/guide/terminology" },
                 { text: "Best Practices", link: "/guide/best-practices" },
             ]
         },
         {
-            text: "Concept",
+            text: "Concepts",
             collapsed: false,
-            link: "/guide/concept/",
+            link: "/guide/concepts/",
             items: [
-                { text: "Principles", link: "/guide/concept/principles" },
-                { text: "Evaluation Context", link: "/guide/concept/evaluation-context" },
-                { text: "Segments", link: "/guide/concept/segments" },
-                { text: "Feature Flags", link: "/guide/concept/feature-flags" },
-                { text: "Specification", link: "/guide/concept/specification" },
+                { text: "Principles", link: "/guide/concepts/principles" },
+                { text: "Evaluation Context", link: "/guide/concepts/evaluation-context" },
+                { text: "Segments", link: "/guide/concepts/segments" },
+                { text: "Feature Flags", link: "/guide/concepts/feature-flags" },
+                { text: "Specification", link: "/guide/concepts/specification" },
                 {
                     text: "Advanced",
-                    link: "/guide/concept/advanced/",
+                    link: "/guide/concepts/advanced/",
                     collapsed: false,
                     items: [
-                        { text: "Scheduled Rollouts", link: "/guide/concept/advanced/scheduled-rollouts" },
-                        { text: "A/B Testing", link: "/guide/concept/advanced/a-b-testing" },
-                        { text: "Gradual Rollouts", link: "/guide/concept/advanced/gradual-rollouts" },
-                        { text: "Type Safety", link: "/guide/concept/advanced/type-safety" },
-                        { text: "Decoupling", link: "/guide/concept/advanced/decoupling" },
+                        { text: "Scheduled Rollouts", link: "/guide/concepts/advanced/scheduled-rollouts" },
+                        { text: "A/B Testing", link: "/guide/concepts/advanced/a-b-testing" },
+                        { text: "Gradual Rollouts", link: "/guide/concepts/advanced/gradual-rollouts" },
+                        { text: "Type Safety", link: "/guide/concepts/advanced/type-safety" },
+                        { text: "Decoupling", link: "/guide/concepts/advanced/decoupling" },
+                        { text: "Emergency Mode", link: "/guide/concepts/advanced/emergency-mode" },
                     ]
                 },
             ]
