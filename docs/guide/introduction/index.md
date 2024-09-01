@@ -27,7 +27,7 @@ Loli Feature Flags offers some packages you can use in your applications. You ba
 - Some compute resources where you can evaluate feature flags (e.g. your backend) using the Loli SDK.
 - A frontend only accessible to you where you can integrate Loli UI which lets you manage feature flags.
 
-![Illustration showing the three parts of a full-stack app and the three main components of Loli Feature Flags as explained below.](./introduction_stack.png)
+![Illustration showing the three parts of a full-stack app and the three main components of Loli Feature Flags as explained below.](introduction_stack.png)
 
 ### Loli Specification
 
@@ -48,21 +48,21 @@ You can learn more about the specification here: [Specification Reference Docs]
 
 ### Loli SDK
 
-The [Loli SDK](../reference/sdk/index.md) (Software Development Kit) offers functions to work with and evaluate feature flags defined in a
+The [Loli SDK](../../reference/sdk/index.md) (Software Development Kit) offers functions to work with and evaluate feature flags defined in a
 Loli specification.
 
-The core piece is the [Loli Client](../reference/sdk/client/index.md) which loads a stored Loli specification
+The core piece is the [Loli Client](../../reference/sdk/client/index.md) which loads a stored Loli specification
 and lets you evaluate all or single feature flags based on user data.
 
 The SDK can be used by your backend/API to evaluate feature flags for server-side logic or to send the feature flag
 values to a client.
 
-But it can also be used on the client-side for [Client Side Evaluation](../reference/sdk/architectures/client-side-evaluation.md)
+But it can also be used on the client-side for [Client Side Evaluation](../../reference/sdk/architectures/client-side-evaluation.md)
 (although not recommend).
 
 ### Loli UI
 
-The [Loli UI](../reference/ui/index.md) is a pluggable user interface/visual editor that can be injected
+The [Loli UI](../../reference/ui/index.md) is a pluggable user interface/visual editor that can be injected
 into any website/web-app. It provides a visual way to manage feature flags.
 
 This avoids managing/creating a Loli specification by hand.
@@ -81,7 +81,7 @@ You should use Loli Feature Flags if you want some of the following things:
 
 ## Further Reads
 
-- [Features](./features.md)
-- [Getting Started](./getting-started.md)
-- [Best Practices](./best-practices.md)
-- [Terminology](./terminology.md)
+- [Features](features.md)
+- [Getting Started](getting-started.md)
+- [Best Practices](best-practices.md)
+- [Terminology](terminology.md)
