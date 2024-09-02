@@ -43,7 +43,7 @@ You can read more about that here: [Multi Instance Services](../../reference/sdk
 
 We also have some recommendations if you are operating in a serverless environment: [Serverless](../../reference/sdk/architectures/serverless.md)
 
-## Change History
+## Versioning
 
 When storing Loli specifications and changes made to it in your data storage, we strongly recommend to
 implement/enable some sort of versioning, so that you have a list of past specifications you can also roll back to.

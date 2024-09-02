@@ -5,6 +5,7 @@ import DefaultTheme from 'vitepress/theme'
 import './style.css'
 
 import UnderConstruction from "../components/UnderConstruction.vue";
+import PlainUnderConstruction from "../components/PlainUnderConstruction.vue";
 
 export default {
   extends: DefaultTheme,
@@ -15,5 +16,6 @@ export default {
   },
   enhanceApp({ app, router, siteData }) {
     app.component("UnderConstruction", UnderConstruction)
+    app.component("PlainUnderConstruction", PlainUnderConstruction)
   }
 } satisfies Theme

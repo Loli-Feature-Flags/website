@@ -5,8 +5,9 @@ a simple "feature toggle" system – and beyond what others do.
 
 ## Further Reads
 
-- [Scheduled Rollouts](./scheduled-rollouts)
-- [A/B Testing](./a-b-testing)
-- [Gradual Rollouts](./gradual-rollouts)
-- [Type Safety](./type-safety)
-- [Decoupling](./decoupling)
+- [Scheduled Rollouts](./scheduled-rollouts.md)
+- [A/B Testing](./a-b-testing.md)
+- [Gradual Rollouts](./gradual-rollouts.md)
+- [Type Safety](./type-safety.md)
+- [Decoupling](./decoupling.md)
+- [Emergency Mode](./emergency-mode.md)

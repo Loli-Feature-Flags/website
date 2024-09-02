@@ -155,6 +155,15 @@ But what if you have the segments "English speaking" and "German speaking"? Poss
 can speak both English and German. So if you allow your users to specify all the languages they speak,
 they might be part of multiple segments.
 
+## Specification
+
+When talking about the "specification" respectively "Loli specification" we are semantically referring to 
+a set of feature flag, segment and evaluation context definitions. These describe your actually feature flag
+setup.
+
+Technically, the "specification" respectively "Loli specification" refers to structured JSON data that
+follows a specific schema. The [Loli Specification Schema](../../reference/specification/schema/index.md).
+
 ## Split Testing
 
 Split testing is just another term for [A/B testing](#ab-testing). Why "split" testing? Well in a 
