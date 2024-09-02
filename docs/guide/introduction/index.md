@@ -81,7 +81,9 @@ You should use Loli Feature Flags if you want some of the following things:
 
 ## Further Reads
 
-- [Features](features.md)
-- [Getting Started](getting-started.md)
-- [Best Practices](best-practices.md)
-- [Terminology](terminology.md)
+- [Getting Started](./getting-started.md)
+- [Features](./features.md)
+- [Best Practices](./best-practices.md)
+- [Terminology](./terminology.md)
+- [Recommended Resources](./recommended-resources.md)
+- [Kudos](./kudos.md)
