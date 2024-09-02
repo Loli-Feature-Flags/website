@@ -12,10 +12,10 @@ hero:
   actions: 
     - text: What is Loli?
       theme: brand
-      link: /guide/introduction
+      link: /guide/introduction/index.md
     - text: Getting Started
       theme: alt 
-      link: /guide/getting-started
+      link: /guide/introduction/getting-started.md
     - text: GitHub
       theme: alt
       link: https://github.com/Loli-Feature-Flags

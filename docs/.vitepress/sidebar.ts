@@ -30,7 +30,7 @@ export const SIDEBAR_CONFIG : DefaultTheme.Sidebar = {
                 { text: "Features", link: "/guide/introduction/features.md" },
                 { text: "Best Practices", link: "/guide/introduction/best-practices.md" },
                 { text: "Terminology", link: "/guide/introduction/terminology.md" },
-                { text: "Recommended Resources", link: "/guide/introduction/recommended-resources.md" },
+                { text: "Recommended", link: "/guide/introduction/recommended-resources.md" },
                 { text: "Kudos", link: "/guide/introduction/kudos.md" },
             ]
         },
