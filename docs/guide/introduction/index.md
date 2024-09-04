@@ -85,5 +85,5 @@ You should use Loli Feature Flags if you want some of the following things:
 - [Features](./features.md)
 - [Best Practices](./best-practices.md)
 - [Terminology](./terminology.md)
-- [Recommended Resources](./recommended-resources.md)
+- [Resources](./resources)
 - [Kudos](./kudos.md)
