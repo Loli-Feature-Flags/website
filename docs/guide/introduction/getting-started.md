@@ -32,6 +32,24 @@ In the following sections we will provide some code examples
 for Postgres, Mongo, and Node.js with Express.
 :::
 
+## Disclaimer
+
+The steps shown here serve as a guideline what needs to be done. It is not a complete
+and detailed step-by-step guide. Loli can be integrated into any stack. That's why it requires
+some full-stack knowledge to accomplish the integration. The steps here serve as a rough guidline.
+
+::: warning
+The steps shown here do not cover some important things like:
+
+- **securing API endpoints** so that only e.g. admins can change the specification
+- setting up a **secure connection to** the **data storage**
+- configuring API **rate limiting**
+- **idempotent specification updates**
+- etc.
+
+You are expected to handle that yourself.
+::: 
+
 ## Data Storage
 
 First, you need to set up a data storage where you can store the Loli [Specification](./terminology.md#specification).
@@ -171,8 +189,52 @@ app.post("/loli-feature-flags/specification", async (req, res) => {
         // Return ID of newly created version.
         res.status(201).json({ id: result.insertedId });
     } catch (error) {
-        console.error('Error storing loli feature flag specification:', error);
+        console.error('Error inserting specification:', error);
         res.status(500).json({ message: 'Failed to store loli feature flag specification', error: error.message });
+    }
+});
+```
+
+### API Endpoint Get Current Specification
+
+Such an endpoint is necessary for the Loli UI later to display the latest version.
+
+#### Postgres
+
+For Postgres this may look like follows:
+```ts
+app.get("/loli-feature-flags/specification", async (req, res) => {
+    try {
+        const result = await pool.query(`
+            SELECT * 
+            FROM loli_feature_flags_specification 
+            ORDER BY createdAt DESC 
+            LIMIT 1;
+        `);
+
+        res.status(200).json(result.rows[0]?.specification ?? null);
+    } catch (error) {
+        console.error('Error getting specification:', error);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+});
+```
+
+#### MongoDB
+
+For MongoDB, it may look like follows:
+```ts
+app.get("/loli-feature-flags/specification", async (req, res) => {
+    try {
+        const documents = await db.loli_feature_flag_specification.find({})
+            .sort({ createdAt: -1 })
+            .limit(1)
+            .toArray();
+        
+        res.status(200).json(documents[0]?.specification ?? null);
+    } catch (error) {
+        console.error('Error getting specification:', error);
+        res.status(500).json({ error: 'Internal Server Error' });
     }
 });
 ```
@@ -273,8 +335,77 @@ app.post("/loli-feature-flags/evaluation/all", async (req, res) => {
 
 ### Integrate Loli UI
 
-<PlainUnderConstruction />
+In this example, we will install the Loli UI on a plain HTML website. To do that,
+we will use the CDN installation method, mount the UI, load the current specification,
+and configure a UI change listener to sync changes to the backend.
+
+You can read everything in detail about that here:
+- [Installation](../../reference/ui/installation.md)
+- [Mounting](../../reference/ui/mounting.md)
+- [Options](../../reference/ui/options.md)
+- [Interface](../../reference/ui/interface.md)
+
+#### Installation
+
+This means, we add the necessary `<script>` tag to the `<head>` section:
+```html
+<script src="https://cdn.jsdelivr.net/gh/loli-feature-flags/loli-ui@latest/dist/loli-ui.umd.cjs"></script>
+```
+
+#### Container
+
+We create a container element for Loli UI:
+```html
+<div id="loli-ui-container">
+</div>
+```
+
+#### Mounting and Data Sync
+
+Now we add some JavaScript to the bottom to load the spec, mount the Loli UI,
+and set up sending changes to the backend.
+
+```html
+<script>
+    let syncChangesTimeout = undefined;
+    
+    function handleLoliUiSpecChanges(newSpecification) {
+        clearTimeout(syncChangesTimeout);
+        
+        syncChangesTimeout = setTimeout(() => {
+            fetch("/api/loli-feature-flags", {
+                method: "POST",
+                body: JSON.stringify(newSpecification)
+            });
+        }, 500);    
+    }
+    
+    function mountLoliUiWithData(specification) {
+        window.mountLoliUi(
+            document.querySelector("#loli-ui-container"),
+            {
+                initialSpec: specification,
+                specChangeListener: handleLoliUiSpecChanges
+            }
+        );
+    }
+    
+    fetch("/api/loli-feature-flags/specification")
+            .then(response => response.json())
+            .then(mountLoliUiWithData);
+</script>
+```
 
 ### Access Feature Flags
 
-<PlainUnderConstruction />
+Assuming you have a Single Page Application (SPA), you may fetch the feature flag
+states from the backend on start like so:
+
+```js
+const allFeatureFlags =
+    await fetch("/api/loli-feature-flags/evaluation/all")
+        .then(response => response.json());
+```
+
+Depending on your frontend library/framework, you may choose to store the feature flag values
+in a shared store/global state.

@@ -61,7 +61,7 @@ Or via the `window` object:
 
 ### Wait For Library
 
-If the Loli UI script is installed via `defer` script, the `mountLoliUi` function
+If the Loli UI script is installed via a `defer` script, the `mountLoliUi` function
 is not directly available.
 
 But the Loli UI library script fires a custom event when the library
