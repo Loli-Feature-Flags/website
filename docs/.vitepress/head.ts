@@ -2,7 +2,6 @@ import {HeadConfig} from "vitepress";
 
 export const HEAD_CONFIG : HeadConfig[] = [
     ['link', { rel: 'icon', href: '/favicon.png' }],
-    ['script', { defer: "", "data-domain": "lolifeatureflags.com", src: "https://plausible.io/js/script.js"}],
     ['meta', { property: 'og:type', content: 'website' }],
     ['meta', { property: 'og:locale', content: 'en' }],
     ['meta', { property: 'og:title', content: 'Loli Feature Flags | Feature flags, rethought.' }],
