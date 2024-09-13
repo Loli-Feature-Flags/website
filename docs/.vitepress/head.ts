@@ -2,6 +2,7 @@ import {HeadConfig} from "vitepress";
 
 export const HEAD_CONFIG : HeadConfig[] = [
     ['link', { rel: 'icon', href: '/favicon.png' }],
+    ['script', { defer: "", "data-website-id": "961301d3-dc1a-4422-89cc-1675d289d601", src: "https://personal-umami.fly.dev/script.js"}],
     ['meta', { property: 'og:type', content: 'website' }],
     ['meta', { property: 'og:locale', content: 'en' }],
     ['meta', { property: 'og:title', content: 'Loli Feature Flags | Feature flags, rethought.' }],
