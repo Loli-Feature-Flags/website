@@ -1,5 +1,7 @@
 FROM oven/bun:alpine AS build
-RUN apk add git curl wget
+RUN apk add git
+RUN apk add curl
+RUN apk add wget
 WORKDIR /app
 COPY package.json package.json
 COPY bun.lockb bun.lockb
