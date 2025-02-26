@@ -1,4 +1,4 @@
-FROM oven/bun:alpine as build
+FROM oven/bun:alpine AS build
 RUN apk add git
 WORKDIR /app
 COPY package.json package.json
