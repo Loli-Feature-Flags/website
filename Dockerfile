@@ -1,4 +1,5 @@
 FROM oven/bun:alpine AS build
+RUN apk update
 RUN apk add git
 RUN apk add curl
 RUN apk add wget
