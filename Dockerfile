@@ -17,5 +17,5 @@ FROM joseluisq/static-web-server:2-alpine
 
 COPY --from=build /app/docs/.vitepress/dist /public
 COPY config.toml config.toml
-
+EXPOSE 3000
 CMD ["static-web-server"]
